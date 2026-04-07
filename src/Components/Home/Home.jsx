@@ -1,10 +1,12 @@
 import React from "react";
-import Navabar from "../Navbar/Navabar";
+import Navabar from "../common/Navabar";
+import Banner from "../common/Banner";
 
 const Home = () => {
   return (
     <>
       <Navabar />
+      <Banner />
     </>
   );
 };
