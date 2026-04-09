@@ -24,12 +24,17 @@ const Home = () => {
   };
   return (
     <>
+      {/* Navbar */}
       <Navabar
         handleScroll={handleScroll}
         setSearchTerms={setSearchTerms}
         isScrolled={isScrolled}
       />
+
+      {/* Banner */}
       <Banner />
+
+      {/* product */}
       <Products searchTerms={searchTerms} />
     </>
   );
