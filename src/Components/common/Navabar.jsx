@@ -1,9 +1,11 @@
 import logo from "../../assets/logo.jpg";
 import { Search, Heart, ShoppingCart } from "lucide-react";
 
-const Navabar = () => {
+const Navabar = ({ handleScroll, setSearchTerms, isScrolled }) => {
   return (
-    <header className="w-full bg-white shadow-sm px-6 fixed top-0 left-0 right-0 h-[80px] z-50">
+    <header
+      className={`w-full bg-white shadow-sm px-6 fixed top-0 left-0 right-0 h-[80px] z-50 ${isScrolled ? "shadow-2xl" : ""}`}
+    >
       <nav className="flex items-center justify-between h-full">
         {/* Logo */}
         <a href="#" className="flex items-center">
@@ -21,7 +23,9 @@ const Navabar = () => {
               type="text"
               placeholder="Search..."
               autoComplete="off"
-              className="w-full px-4 py-2 outline-none bg-white"
+              className="w-full px-4 py-2 outline-none bg-white cursor-pointer"
+              onFocus={handleScroll}
+              onChange={(e) => setSearchTerms(e.target.value)}
             />
             <button className="bg-blue-500 px-4 flex items-center justify-center">
               <Search className="text-white w-5 h-5" />
